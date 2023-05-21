@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Connexion</title>
+		  <!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#4285f4">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#4285f4">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
+		<link rel="stylesheet" type="text/css" href="style.css, https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css, https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-9ntLF5/LI8CkskWMv+HfftbQbAO27rK8WtMv+kHPJ9C9pPeUNB53JXM1aV+dNuS" crossorigin="anonymous">
+
+		<style>
+		/* Style pour la fenêtre modale */
+		.modal {
+		    display: none; /* Par défaut, la fenêtre modale est cachée */
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    background-color: rgba(245, 245, 220, 0.5); /* Fond semi-transparent */
+		    z-index: 9999; /* Mettre la fenêtre modale au-dessus du reste du contenu */
+		}
+
+		.modal-content {
+		    background-color: rgba(245, 245, 220, 1);
+		    width: 400px;
+		    padding: 20px;
+		    margin: 100px auto; /* Centrer la fenêtre modale verticalement et horizontalement */
+		    border-radius: 4px;
+		}			
+		/* Styles pour la barre de navigation (navbar) */
+		.navbar {
+		  background-color: rgba(211, 192, 173, 0.7 ); /* Couleur de fond semi-transparente */
+		  display: flex;
+		  align-items: center;
+		  padding: 10px;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  z-index: 999; /* Pour s'assurer que la barre de navigation soit en premier plan */
+		}
+
+		/* Style pour le logo */
+		.logo {
+		  width: 50px; /* Ajustez la taille du logo selon vos besoins */
+		  height: 50px;
+		  margin-right: 10px; /* Marge à droite pour l'espacement */
+		}
+
+		/* Styles pour la liste de navigation (nav) */
+		nav {
+		  margin-left: auto; /* Pour aligner la liste de navigation à droite */
+		}
+
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		li {
+		  display: inline;
+		}
+
+		a {
+		  color: #fff; /* Couleur du texte des liens */
+		  margin-right: 10px; /* Marge à droite pour l'espacement entre les liens */
+		  text-decoration: none;
+		}
+
+		a:hover {
+		  text-decoration: underline; /* Effet de soulignement au survol des liens */
+		}
+			/* Style pour le paragraphe avec une police sans empattement */
+		.content{
+		 margin-top: 80px; /* Hauteur de la barre de navigation + espace de marge */
+  /* Autres styles pour le contenu */
+  		overflow: hidden;
+  		}	
+			
+			body {
+			/*Changer le type d'écriture en Serif*/
+			font-family: Serif, Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			color: #333;
+
+			  background-color: #f5f5dc; /* Exemple de couleur de fond bleu bébé */
+			}
+			/* Style pour le conteneur de la page d'inscription */
+			.background-image {
+			  /* Ajouter l'image en arrière-plan */
+			  background-image: url(/home/cytech/Desktop/CyTech_ing1/Semestre\ 2/Dev\ Web/Projet_Recettes/imageF.jpg);
+			  background-size: cover; /* Ajuster la taille de l'image pour couvrir la fenêtre */
+			  background-position: center; /* Centrer l'image */
+			  background-repeat: no-repeat; /* Ne pas répéter l'image */
+			  filter: blur(5px);/*L'image deviendra un peu plus floue*/
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  z-index: -1; /* Mettre l'élément en arrière-plan */
+			}
+
+			.container {
+			max-width: 400px; /* Largeur maximale du conteneur */
+			margin: 0 auto; /* Centrer le conteneur horizontalement */
+			padding: 20px; /* Espacement interne du conteneur */
+			background-color: #ffffff; /* Couleur de fond du conteneur */
+			border-radius: 5px; /* Coins arrondis du conteneur */
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.1); /* Ombre légère du conteneur */
+			margin-left: auto; /* Marge gauche automatique pour centrer l'élément */
+			margin-right: auto; /* Marge droite automatique pour centrer l'élément */
+			text-align: center; /* Centrer le texte dans l'élément avec la classe "container" */
+			align-items: center;
+			border-radius: 20px; /* Ajouter la propriété border-radius avec la valeur appropriée */
+			background-color: rgba(245, 245, 220, 0.7); /* Remplacez les valeurs de rouge, vert, bleu (RGB) par la couleur souhaitée */
+  /* La valeur 0.8 spécifie l'opacité du conteneur (ici 80%) */
+			}
+			/* Style pour les boutons radio ou les cases à cocher pour la partie "sexe" */
+			.large-input {
+			  width: 200%;
+			  padding: 12px;
+			  box-sizing: border-box;
+			  font-size: 14px;
+			}
+
+			.container form { /*Centrer le formulaire */
+			display: flex; /* Utiliser Flexbox pour centrer les éléments du formulaire */
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		
+			}
+			.container form input,
+			.container form select {
+			margin: 0 auto; /* Centrer les champs de formulaire horizontalement */
+			text-align : center; /*Centrer le texte à l'intérieur de l'élément */
+			display: block; /* Transformer les éléments de formulaire en éléments de bloc */
+			}
+			 .input-container {
+     			 position: relative; /* Positionnement relatif pour permettre le positionnement absolu de l'icône */
+    			}
+    			/* Style pour l'icône */
+		      .input-icon {
+		      position: absolute; /* Positionnement absolu pour placer l'icône à l'intérieur de l'input */
+		      top: 50%; /* Centrer verticalement l'icône */
+		      left: 10px; /* Décaler l'icône de 10px depuis la gauche */
+		      transform: translateY(-50%); /* Ajuster verticalement l'icône par rapport à l'input */
+		      color: #999; /* Couleur de l'icône */
+		    }
+				    /*foot-icons*/
+		  .foot-icons {
+		    text-align: center;
+		    margin-top: 60px;
+		  }
+		  .foot-icons .footer-social-links li {
+		    padding: 0 10px;
+		    text-align: center;
+		  }
+		  .foot-icons .footer-social-links a {
+		    color: #fff;
+		    display: block;
+		    font-size: 18px;
+		    width: 60px;
+		    line-height: 60px;
+		    height: 60px;
+		    border-radius: 50%;
+		    -webkit-transition: all 0.5s ease-in-out 0s;
+		    -moz-transition: all 0.5s ease-in-out 0s;
+		    -o-transition: all 0.5s ease-in-out 0s;
+		    -ms-transition: all 0.5s ease-in-out 0s;
+		    transition: all 0.5s ease-in-out 0s;
+		    border-radius: 50%;
+		  }
+		  
+		  .foot-icon-bg-1 {
+		    background: #3e67c0;
+		  }
+		  .foot-icon-bg-2 {
+		    background: gold;
+		  }
+		  .foot-icon-bg-3 {
+		    
+		    background: #8938ae; /* Old browsers */
+		    background: -webkit-linear-gradient(right, #8938ae 0%, #c13181 100%);
+		    background: -o-linear-gradient(right, #8938ae 0%, #c13181 100%);
+		    background: linear-gradient(to right, #8938ae 0%, #c13181 100%);
+		  }
+		  
+		  .foot-icons .footer-social-links a:hover {
+		    /*color: #00d8d5;*/
+		    color: #2cdbb5;
+		    -webkit-transform: rotate(360deg);
+		    -moz-transform: rotate(360deg);
+		    -o-transform: rotate(360deg);
+		    -ms-transform: rotate(360deg);
+		    transform: rotate(360deg);
+		  }
+		  .foot-icons p {
+		    color: #aaa;
+		    font-size: 16px;
+		    margin-top: 28px;
+		  }
+		  .foot-icons p a,
+		  .foot-icons p a:hover,
+		  .foot-icons p a:focus {
+		    color: gold;
+		    font-size: 16px;
+		    margin-top: 28px;
+		  } /*foot-icons*/
+		  
+		  .footer-social-links {
+		    display: flex;
+		    justify-content: center;
+		  }
+		  .foot-icon-bg-gmail{
+		    background: red;
+		  }.custom-input {
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  padding: 8px;
+		  font-size: 16px;
+		  width: 50%;
+		}
+		  
+		  .btn-submit {
+		  background-color: #FFA500;
+		  color: #ffffff;
+		  padding: 10px;
+		  font-size: 16px;
+		  border: none;
+		  border-radius: 3px;
+		  cursor: pointer;
+		  width : 30%;
+		  display : block;
+		  cursor: pointer;
+		  margin : 0 auto;
+		}
+	</style>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+   	 <script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
+		
+	</head>
+	<body>
+	<div class="navbar">
+		    <img src="/home/cytech/Desktop/CyTech_ing1/Semestre 2/Dev Web/Projet_Recettes/logo.jpeg" alt="Logo" class="logo"> <!-- Remplacez "logo.png" par le chemin de votre propre logo -->
+		    <nav>
+		      <ul>
+			<li><a href="index.html">Accueil</a></li>
+			<li><a href="description.html">À propos</a></li>
+			<li><a href="#" id="contactLink">Contact</a></li>
+		      </ul>
+		    </nav>
+		  </div>
+		   <div id="myModal" class="modal">
+		  <div class="modal-content">
+		    <!-- Contenu de la fenêtre modale (informations de contact) -->
+		    <h2>Contact</h2>
+		    <p>Numéro de téléphone : +3312-7754-0123</p>
+		    <p>Email : administration@QandE.fr</p>
+		    <button id="closeModal">Fermer</button>
+		</div>
+		  <script>
+		// Récupérer l'élément "Contact" par son ID
+		var contactLink = document.getElementById('contactLink');
+		// Récupérer l'élément de fermeture de la fenêtre modale par son ID
+		var closeModal = document.getElementById('closeModal');
+		// Récupérer la fenêtre modale par son ID
+		var modal = document.getElementById('myModal');
+
+		// Ajouter un écouteur d'événement sur le lien "Contact" pour ouvrir la fenêtre modale
+		contactLink.addEventListener('mouseover', function() {
+		    modal.style.display = 'block';
+		});
+
+		// Ajouter un écouteur d'événement sur le bouton de fermeture de la fenêtre modale pour la fermer
+		closeModal.addEventListener('click', function() {
+		    modal.style.display = 'none';
+		});
+	    </script>
+	    </div>
+	      	<div class="content">
+				
+		<div class="background-image"></div>
+		
+		<div class = "container">
+		<h1>Connectez-vous</h1>
+		<form action =".php" method="POST">
+		<div class="form-group">
+		<div class="input-group">
+		<div class="input-group-prepend">
+		<span class="input-group-text"><i class="fas fa-user"></i></span>
+		</div>
+		<input class="input-field form-control large-input custom-input" type="text" id="pseudo" name="pseudo" placeholder="Pseudo" style="width: 50%">
+
+		</div>
+		</div>
+		<br>
+		<br>
+		 <div class="form-group">
+		 <div class="input-group">
+     		 <div class="input-group-prepend">
+     		 <span class="input-group-text"><i class="fas fa-lock"></i></span>
+		</div>
+		<input class="input-field form-control large-input custom-input" type="password" id="pwd" name="pwd" maxlength="15" placeholder="Mot de passe" style="width: 50%;">
+
+		</div> 
+		</div>
+		<br><br>
+		
+		<button type="submit" class="btn btn-submit">Confirmer</button>
+		</form>
+		
+		 <hr> 
+		 <h2>Se connecter avec</h2>
+		<div class="foot-icons text-center">
+	        <ul class="footer-social-links list-inline list-unstyled">
+		 <li><a href="https://www.fb.com" target="_blank" class="foot-icon-bg-1"><i class="fa fa-facebook"></i></a></li>
+		 <li><a href="https://www.twitter.com" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
+		 <li><a href="https://www.instagram.com" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
+		 <li><a href="mailto:contact@q&e.fr" class="foot-icon-bg-gmail" target="_blank"><i class="fa fa-envelope"></i></a></li>
+	     
+	       </ul>
+	       </div>
+	        <hr>
+		<div>
+		<p>Vous n'avez pas encore de compte?<a href="inscription.html">cliquez ici</a> pour vous inscrire.</p>
+		</div>
+		</div>
+		</div>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js ntegrity="sha384-GLhlMWSu9K0yMTPEnoTG+56Wp1NToOxH0t2cCx06IEXblOyehScymOMPSXl5G5vP" crossorigin="anonymous"s"></script>
+		
+	</body>
+</html>
