@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profil Utilisateur</title>
+  <link rel="stylesheet" href="stylePr.css">
+</head>
+<body>
+  <div class="profile-cover">
+    <img src="cover-photo.jpg" alt="Photo de couverture">
+  </div>
+
+  <div class="profile-picture">
+    <img src="profile-photo.jpg" alt="Photo de profil">
+  </div>
+
+  <div class="card-table" id="informations-card">
+    <h2>Informations générales</h2>
+    <div class="card-content">
+      <!-- Contenu des informations générales de l'utilisateur -->
+      <?php
+      // Récupérer les informations de l'utilisateur depuis le backend
+      $prenom = "John";
+      $nom = "Doe";
+      $nationalite = "France";
+      $date_naissance = "01/01/1990";
+      $email = "john.doe@example.com";
+      $pseudo = "johndoe123";
+      ?>
+
+      <p>Prénom: <?php echo $prenom; ?></p>
+      <p>Nom: <?php echo $nom; ?></p>
+      <p>Nationalité: <?php echo $nationalite; ?></p>
+      <p>Date de naissance: <?php echo $date_naissance; ?></p>
+      <p>Email: <?php echo $email; ?></p>
+      <p>Pseudo: <?php echo $pseudo; ?></p>
+      <!-- Ajoutez plus d'informations ici -->
+    </div>
+  </div>
+
+  <div class="card-table" id="commentaires-card">
+    <h2>Commentaires</h2>
+    <div class="card-content">
+      <?php
+      // Récupérer les commentaires de l'utilisateur depuis le backend
+      $commentaires = array(
+        "Commentaire 1",
+        "Commentaire 2",
+        "Commentaire 3"
+      );
+
+      // Afficher les commentaires
+      foreach ($commentaires as $commentaire) {
+        echo "<p>$commentaire</p>";
+      }
+      ?>
+    </div>
+  </div>
+
+  <div class="card-table" id="parametres-card">
+    <h2>Paramètres</h2>
+    <div class="card-content">
+      <div class="changer-mot-de-passe" onclick="toggleChangerMotDePasse()">
+        <p>Changer mot de passe</p>
+      </div>
+      <div class="supprimer-compte" onclick="supprimerCompte()">
+        <p>Supprimer le compte</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="champ-mot-de-passe" style="display: none;">
+    <form>
+      <label for="old-password">Ancien mot de passe:</label>
+      <input type="password" id="old-password" name="old-password" required><br>
+      <label for="new-password">Nouveau mot de passe:</label>
+      <input type="password" id="new-password" name="new-password" required><br>
+      <label for="confirm-password">Confirmer le mot de passe:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required><br>
+      <button type="submit">Modifier le mot de passe</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Fonction pour afficher ou masquer le champ de modification de mot de passe
+    function toggleChangerMotDePasse() {
+      const champMotDePasse = document.getElementById('champ-mot-de-passe');
+      champMotDePasse.style.display = (champMotDePasse.style.display === 'none') ? 'block' : 'none';
+    }
+
+    // Fonction pour supprimer le compte
+    function supprimerCompte() {
+      if (confirm("Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.")) {
+        // Effectuer la logique de suppression du compte côté backend
+        // ...
+        // Rediriger l'utilisateur vers une page de confirmation ou de déconnexion
+        window.location.href = 'confirmation-suppression.html';
+      }
+    }
+  </script>
+</body>
+</html>
+
