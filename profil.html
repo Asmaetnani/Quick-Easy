@@ -3,20 +3,32 @@
 <head>
   <title>Profil Utilisateur</title>
   <link rel="stylesheet" href="stylePr.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="profile-cover">
-    <img src="cover-photo.jpg" alt="Photo de couverture">
+    <div class="upload-overlay">
+      <label for="cover-upload" class="upload-label">
+        <i class="fas fa-camera"></i>
+      </label>
+      <input type="file" id="cover-upload" class="upload-input" accept="image/*">
+    </div>
+    <img src="/home/cytech/Desktop/CyTech_ing1/Semestre 2/Dev Web/Projet_Recettes/image2.jpg" alt="Photo de couverture">
   </div>
 
   <div class="profile-picture">
-    <img src="profile-photo.jpg" alt="Photo de profil">
+    <div class="upload-overlay">
+      <label for="profile-upload" class="upload-label">
+        <i class="fas fa-camera"></i>
+      </label>
+      <input type="file" id="profile-upload" class="upload-input" accept="image/*">
+    </div>
+    <img src="/home/cytech/Desktop/CyTech_ing1/Semestre 2/Dev Web/Projet_Recettes/avatarChef.jpg" alt="Photo de profil">
   </div>
 
   <div class="card-table" id="informations-card">
     <h2>Informations générales</h2>
     <div class="card-content">
-      <!-- Contenu des informations générales de l'utilisateur -->
       <?php
       // Récupérer les informations de l'utilisateur depuis le backend
       $prenom = "John";
@@ -56,32 +68,102 @@
     </div>
   </div>
 
+  <div class="card-table" id="favories-card">
+    <h2>Recettes favorites</h2>
+    <div class="card-content">
+      <?php
+      // Récupérer les recettes favorites de l'utilisateur depuis le backend
+      $recettes_favorites = array(
+        "Recette favorite 1",
+        "Recette favorite 2",
+        "Recette favorite 3"
+      );
+
+      // Afficher les recettes favorites
+      foreach ($recettes_favorites as $recette) {
+        echo "<p>$recette</p>";
+      }
+      ?>
+    </div>
+  </div>
+
+  <div class="card-table" id="recettes-card">
+    <h2>Mes recettes</h2>
+    <div class="card-content">
+      <?php
+      // Récupérer les recettes de l'utilisateur depuis le backend
+      $recettes = array(
+        "Recette 1",
+        "Recette 2",
+        "Recette 3"
+      );
+
+      // Afficher les recettes
+      foreach ($recettes as $recette) {
+        echo "<p>$recette</p>";
+      }
+      ?>
+    </div>  
+  </div>
+
   <div class="card-table" id="parametres-card">
     <h2>Paramètres</h2>
     <div class="card-content">
       <div class="changer-mot-de-passe" onclick="toggleChangerMotDePasse()">
         <p>Changer mot de passe</p>
       </div>
+      <div id="champ-mot-de-passe" style="display: none;">
+        <form>
+          <label for="old-password">Ancien mot de passe:</label>
+          <input type="password" id="old-password" name="old-password" required><br>
+          <label for="new-password">Nouveau mot de passe:</label>
+          <input type="password" id="new-password" name="new-password" required><br>
+          <label for="confirm-password">Confirmer le mot de passe:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required><br>
+          <button type="submit">Modifier le mot de passe</button>
+        </form>
+      </div>
       <div class="supprimer-compte" onclick="supprimerCompte()">
         <p>Supprimer le compte</p>
       </div>
+      <!-- Ajoutez plus de paramètres ici -->
     </div>
   </div>
+    <script>
+    // Avertit avant la suppression du compte
 
-  <div id="champ-mot-de-passe" style="display: none;">
-    <form>
-      <label for="old-password">Ancien mot de passe:</label>
-      <input type="password" id="old-password" name="old-password" required><br>
-      <label for="new-password">Nouveau mot de passe:</label>
-      <input type="password" id="new-password" name="new-password" required><br>
-      <label for="confirm-password">Confirmer le mot de passe:</label>
-      <input type="password" id="confirm-password" name="confirm-password" required><br>
-      <button type="submit">Modifier le mot de passe</button>
-    </form>
-  </div>
+    function confirmerSuppressionCompte() {
+      if (confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible et entraînera la suppression définitive de toutes vos informations et actions associées.')) {
+        supprimerCompte();
+      }
+    }
+
+    function supprimerCompte() {
+      // Effectuer les actions nécessaires pour supprimer le compte de l'utilisateur
+      alert('Votre compte a été supprimé avec succès.');
+      // Rediriger vers une page d'accueil ou de déconnexion
+      window.location.href = 'accueil.php';
+    }
+  </script>
 
   <script src="script.js"></script>
   <script>
+    // Fonction pour filtrer les commentaires par date
+    function filtrerCommentairesParDate(date) {
+      const commentaires = document.querySelectorAll('#commentaires-card .card-content p');
+      commentaires.forEach(commentaire => {
+        const commentaireDate = commentaire.getAttribute('data-date');
+        if (commentaireDate === date) {
+          commentaire.style.display = 'block';
+        } else {
+          commentaire.style.display = 'none';
+        }
+      });
+    }
+
+    // Exemple d'utilisation : filtrer par la date '2023-05-19'
+    filtrerCommentairesParDate('2023-05-19');
+
     // Fonction pour afficher ou masquer le champ de modification de mot de passe
     function toggleChangerMotDePasse() {
       const champMotDePasse = document.getElementById('champ-mot-de-passe');
@@ -90,12 +172,10 @@
 
     // Fonction pour supprimer le compte
     function supprimerCompte() {
-      if (confirm("Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.")) {
-        // Effectuer la logique de suppression du compte côté backend
-        // ...
-        // Rediriger l'utilisateur vers une page de confirmation ou de déconnexion
-        window.location.href = 'confirmation-suppression.html';
-      }
+      // Effectuer les actions nécessaires pour supprimer le compte de l'utilisateur
+      alert('Compte supprimé avec succès.');
+      // Rediriger vers une page d'accueil ou de déconnexion
+      window.location.href = 'accueil.php';
     }
   </script>
 </body>
