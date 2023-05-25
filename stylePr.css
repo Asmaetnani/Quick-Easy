@@ -21,7 +21,32 @@ body {
 }
 
 /* Photo de profil */
+./* styles.css */
+
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Photo de couverture */
+.profile-cover {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #e5e5e5;
+}
+
+.profile-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Photo de profil */
 .profile-picture {
+  position: relative;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -36,6 +61,37 @@ body {
   object-fit: cover;
 }
 
+/* Overlay et icône de caméra */
+.upload-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-cover:hover .upload-overlay,
+.profile-picture:hover .upload-overlay {
+  opacity: 1;
+}
+
+.upload-label {
+  color: #fff;
+  font-size: 24px;
+}
+
+.upload-input {
+  display: none;
+}
+
+
 /* Card Table */
 .card-table {
   background-color: #f5f5f5;
@@ -46,6 +102,8 @@ body {
 
 .card-table h2 {
   margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .card-content {
@@ -55,5 +113,73 @@ body {
 .card-content p {
   margin: 0;
   padding: 5px 0;
+  color: #555;
+}
+
+/* Bouton changer mot de passe */
+.changer-mot-de-passe {
+  cursor: pointer;
+  background-color: #e5e5e5;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+.changer-mot-de-passe:hover {
+  background-color: #ccc;
+}
+
+.changer-mot-de-passe p {
+  margin: 0;
+  color: #333;
+}
+
+/* Bouton supprimer compte */
+.supprimer-compte {
+  cursor: pointer;
+  background-color: #e5e5e5;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.supprimer-compte:hover {
+  background-color: #ccc;
+}
+
+.supprimer-compte p {
+  margin: 0;
+  color: #333;
+}
+/* Champ mot de passe */
+.champ-mot-de-passe label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.champ-mot-de-passe input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.champ-mot-de-passe button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.champ-mot-de-passe button[type="submit"]:hover {
+  background-color: #45a049;
 }
 
