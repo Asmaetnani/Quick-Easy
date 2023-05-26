@@ -1,7 +1,7 @@
 <!-- Fichier : traitement.php -->
 
 <?php
-include 'db_functions.php';
+include 'db_function.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération des données du formulaire
@@ -14,12 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pays = $_POST['listePays'];
 
     // Traitement des données (par exemple, enregistrement dans une base de données)
-    if(SignUp_user($nom, $prenom, $pseudo, $email, $pwd, $date_naissance, $pays)){
-        
+    $mysql = ConnexionPDO();
+    if (SignUp_user($mysql, $nom, $prenom, $pseudo, $email, $date_naissance, $pwd, $pays)) {
+
         // Redirection vers une page de succès ou une autre action (page d'acceuil)
-    header('Location: index.html');
+        header('Location: index.html');
+    } else {
+        echo ("error");
     }
-    
-    exit;
+
+    exit;
 }
-?>
+
