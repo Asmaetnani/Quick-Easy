@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#contactPopup {
+  display: none;
+  position: absolute;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Barre de navigation */
+.navbar {
+  background-color: #4285f4;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Contenu de la page */
+.content {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-icon {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: #888;
+}
+
+.custom-input {
+  padding: 10px 10px 10px 30px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-submit {
+  background-color: #4285f4;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #357ae8;
+}
+
+/* Réseaux sociaux */
+.foot-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social-links li {
+  margin-right: 10px;
+}
+
+.foot-icon-bg-1 {
+  color: #3b5998;
+  background-color: #fff;
+}
+
+.foot-icon-bg-2 {
+  color: #fffc00;
+  background-color: #000;
+}
+
+.foot-icon-bg-3 {
+  color: #e4405f;
+  background-color: #fff;
+}
+
+.foot-icon-bg-gmail {
+  color: #fff;
+  background-color: #db4a39;
+}
+.or-text {
+  margin-right: 10px;
+}
+
+/* Fenêtre modale */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #888;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
