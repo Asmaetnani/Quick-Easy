@@ -23,7 +23,7 @@ body {
 
 /* Barre de navigation */
 .navbar {
-  background-color: #4285f4;
+  background-color: #ff9900;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@ nav ul li a {
   text-align: center;
 }
 .btn-submit {
-  background-color: #4285f4;
+  background-color: #ff9900;
   color: #fff;
   padding: 10px 20px;
   border: none;
