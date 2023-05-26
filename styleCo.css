@@ -72,22 +72,33 @@ nav ul li a {
 .input-container {
   position: relative;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
 }
 
 .input-icon {
-  position: absolute;
-  top: 12px;
-  left: 10px;
+ 
+   right: -30px;
+   position: relative;
   color: #888;
+  margin-right: 10px;
 }
 
 .custom-input {
   padding: 10px 10px 10px 30px;
-  width: 100%;
+  width: 50%;
   border: 1px solid #ccc;
   border-radius: 4px;
+  
 }
-
+#pseudo,
+#password {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
 .btn-submit {
   background-color: #4285f4;
   color: #fff;
@@ -95,7 +106,12 @@ nav ul li a {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width: 30%;
+  margin:0 auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  
 }
 
 .btn-submit:hover {
