@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Recette Q&E</title>
+	<link rel="icon" href="img/Q&E.ico" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="recette.css">
+   
+	
+
+</head>
+
+
+<body>
+	
+	<nav>
+		
+		<label class="logo"> Quick&Easy</label>
+		<ul>
+			<li> <a class="active"href="index.hmhl">Accueil</a> 
+			</li>
+			<li> <a href="recettes.hmhl">Recettes</a> 
+			</li>
+			<li> <a href="index.hmhl">Contact</a> 
+			</li>
+			<li> <a href="seconnecter.hmhl">Se connecter</a> 
+			</li>
+		</ul>
+	</nav>
+	
+	  
+	  
+	<div id="div_contenu">
+		<br><br><br>
+		<div class="top-recettes">
+		  <h2 style="font-family: cursive; display: flex; flex-direction: row;"><span style="margin-right: 5px;">Top</span>
+            <span>Recettes</span></h2>
+		  <input id="searchbar" onkeyup="rechercheRecette()" type="text" name="rechercher" placeholder="Rechercher une recette">
+		</div>
+		<ol id="ls_plat">
+		  <li class="recettes">
+			<div class="recipe">
+			  <img src="img/Tchoukchouka.webp" alt="">
+			  <div class="recipe-overlay">
+				<div class="recipe-name">Tchoukchouka</div>
+			  </div>
+			  <a href="tchoukchouka.html" class="recipe-link"></a>
+			</div>
+		  </li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/oeufs_tomates.jpeg" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Sauté oeufs-tomates à la chinoise</div>
+					</div>
+					<a href="oeufs_tomates.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/boeuf_chinois.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Boeuf aux oignons à la chinoise</div>
+					</div>
+					<a href="boeuf_chinois.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/Smoothie.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Smoothie aux fruits rouges</div>
+					</div>
+					<a href="smoothie.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/risotto.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Risotto facile aux carottes</div>
+					</div>
+					<a href="risotto.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/gratin.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Gratin aux ravioles et épinards</div>
+					</div>
+					<a href="gratin.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/mousse_au_nutella.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Mousse express au Nutella</div>
+					</div>
+					<a href="mousse_nutella.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/pouletyaourt.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Blancs de poulet légers au
+							yaourt et citron vert</div>
+					</div>
+					<a href="blanc_de_poulet.html" class="recipe-link"></a>
+				</div>
+			</li>		
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/pates_au_saumon.jpeg" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Les pâtes au saumon fumé</div>
+					</div>
+					<a href="pate_au_saumon.html" class="recipe-link"></a>
+				</div>
+			</li>
+			<li class="recettes">
+				<div class="recipe">
+					<img src="img/flan.webp" alt="">
+					<div class="recipe-overlay">
+						<div class="recipe-name">Flan</div>
+					</div>
+					<a href="flan.html" class="recipe-link"></a>
+				</div>
+			</li>
+						</ol>
+						
+			<script>
+			      function rechercheRecette() {
+      let input = document.getElementById('searchbar').value.toLowerCase();
+      let recettes = document.getElementsByClassName('recettes');
+
+      for (let i = 0; i < recettes.length; i++) {
+        let recette = recettes[i].querySelector('.recipe-name').innerHTML.toLowerCase();
+
+        if (!recette.includes(input)) {
+          recettes[i].style.display = "none";
+        } else {
+          recettes[i].style.display = "list-item";
+        }
+      }
+    }
+			</script>
+									
+						
+
+<br><br><br>
+
+
+
+
+</html>
