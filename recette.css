@@ -1,0 +1,244 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+body {
+
+
+    font-family:montserrat ;
+	background-color: rgb(206, 206, 206);
+	margin:50px;
+}
+
+nav{
+    background-color: bisque;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,a:hover{
+
+}
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: left;
+	margin-left: 50px;
+}
+
+ #searchbar{
+     margin-left: 65%;
+     padding:10px;
+     border-radius: 10px;
+   }
+ 
+   input[type=text] {
+      width: 20%;
+      -webkit-transition: width 0.15s ease-in-out;
+      transition: width 0.15s ease-in-out;
+   }
+ 
+   input[type=text]:focus {
+     width: 30%; /*Quand on clique sur la barre de recherche, la taille va changer à 30%*/
+   }
+ 
+  #list{
+    font-size:  1.5em;
+    margin-left: 90px;
+   }
+ 
+.recettes{
+   display: list-item;    
+  } 
+  
+
+
+.navbar {
+		  background-color: white; /* Couleur de fond semi-transparente */
+		  display: flex;
+		  align-items: center;
+		  padding: 10px;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  z-index: 999; /* Pour s'assurer que la barre de navigation soit en premier plan */
+		}
+
+.logo {
+		  width: 50px; /* Ajustez la taille du logo selon vos besoins */
+		  height: 50px;
+		  margin-right: 10px; /* Marge à droite pour l'espacement */
+		}
+		
+		nav {
+				  margin-left: auto; /* Pour aligner la liste de navigation à droite */
+				}
+				
+				
+#div_contenu {
+    width: 85%;
+    /* background-color: yellowgreen; */
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#div_recherche {
+    float: right;
+    margin-bottom: 20px;
+}
+
+ #div_plat {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #div_plat li {
+        width: 20%;
+        margin-bottom: 70px;
+    }
+
+#ls_plat {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#ls_plat li {
+    float: left;
+    /* background-color: aqua; */
+    width: 25%;
+    text-align: center;
+    margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#ls_plat a {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#ls_plat img {
+    width: 220px;
+    height: 150px;
+}
+
+
+.container {
+	display: flex;
+	align-items: center;
+}
+
+.image-container1 {
+	flex-shrink: 0; /* Empêche le rétrécissement des conteneurs d'image */
+}
+
+.text-container {
+	background-color: grey;
+	margin-left: 50px;
+	flex-grow: 1; /* Permet au conteneur de texte de prendre autant d'espace disponible */
+}
+
+.image-container2 {
+	background-color: grey;
+	flex-shrink: 0; /* Empêche le rétrécissement des conteneurs d'image */
+}
+.top-recettes {
+    display: flex;
+    align-items: center;
+}
+
+.top-recettes h2 {
+    margin-right: 10px;
+}
+
+.recipe {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.recipe img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.recipe:hover img {
+    transform: scale(1.1);
+}
+
+.recipe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.recipe:hover .recipe-overlay {
+    opacity: 1;
+}
+
+.recipe-name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
