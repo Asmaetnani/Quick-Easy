@@ -1,0 +1,295 @@
+body{
+	background-color: #f5f5dc;
+	margin:50px;
+}
+
+.navbar {
+		  background-color: rgba(211, 192, 173, 0.7 ); /* Couleur de fond semi-transparente */
+		  display: flex;
+		  align-items: center;
+		  padding: 10px;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  z-index: 999; /* Pour s'assurer que la barre de navigation soit en premier plan */
+		}
+
+.logo {
+		  width: 50px; /* Ajustez la taille du logo selon vos besoins */
+		  height: 50px;
+		  margin-right: 10px; /* Marge à droite pour l'espacement */
+		}
+		
+nav {
+		  margin-left: auto; /* Pour aligner la liste de navigation à droite */
+		}
+		
+		
+img{
+	width:400px;
+	height:200px;
+}
+.image-row {
+            display: flex;
+            justify-content: center;
+        }
+        
+.image-row img {
+	 width:50px;
+	 height:50px;
+            margin: 0 60px; /* margin pour séparer chaque icone */
+        }
+
+.texte {
+            flex: 1;
+            padding-right: 20px;
+			margin-left: 200px;
+        }
+		
+.platImg {
+        flex: 1;
+        text-align: right;
+		margin-right: 200px;
+        }
+
+.wrapper {
+    display: flex;
+	
+}
+
+.wrapper > div {
+    flex: 1;
+}
+
+.premierLettre{
+            font-size: 27px;
+        }
+
+h1,h2,h3,h4{
+	 font-family: cursive;
+}
+
+
+
+.div1{
+	
+	text-align: center;
+	margin: 0 20%;
+	padding:10px;
+}
+
+.box{
+	margin: 0 3px;
+	
+}
+
+
+.div2{
+	display: flex;
+	align-items: center;
+}
+
+.div3{
+	width:800px;
+	margin-right:120px;
+	margin-left: 200px;
+}
+
+.div4{
+	display: flex;
+
+}
+
+.evaluation {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  margin-right: 10px;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+
+.star {
+  font-size: 24px;
+  color: gray;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.selectedstar{
+	font-size: 24px;
+	color: gold;
+	margin-right: 5px;
+}
+
+.star.selected {
+  color: gold;
+}
+
+
+.comment {
+  display: flex;
+}
+	
+.comment-avatar {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.comment-avatar img {   
+    width: 60px;
+    height: 60px;
+	margin: 20px 0 0 0;
+    border-radius: 50%;
+}
+
+#commentList {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+  
+.comment-input {
+    outline: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    transition: all 0.3s;
+    position: absolute;
+    top: 15px; left: 70px;
+    resize: none;
+    width: 330px;
+    height: 65px;
+    padding: 10px;
+    border-radius: 4px;
+    background: #f4f5f7;
+    border: 1px solid #e5e9ef;
+	font-size: 14px;
+}
+
+
+.comment-input:hover, .comment-input:active {
+    background: #fff;
+    color: #555;
+}
+
+.cls {
+	clear: both;
+}
+
+.comment-content {
+	flex-grow: 1;
+	float: right;
+	width: 500px;
+    padding-top: 15px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.comment-bottom>.comment-content {
+	border-bottom: 1px solid #dfdfdf;
+}
+  
+.comment-content-name {
+    color: #6d757a;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+  
+.comment-content-article {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+  
+.comment-content-footer {
+    color: #6d757a;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+  
+.comment-content-footer span {
+	margin-right: 10px;
+}
+
+.comment-send {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.send-button {
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    transition: all 0.3s;
+    position: absolute;
+    top: 15px; 
+	left:410px;
+    width: 65px;
+    height: 65px;
+    border-radius: 4px;
+    background: #1aa2d4;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.comment-send-button:hover {
+   background: #1eb6e3;
+}
+
+#tri-select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#tri-select:hover {
+  border-color: #999;
+}
+
+#tri-select:focus {
+  border-color: #555;
+}
+
+#tri-select option {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+
+
+.commentaire{
+	flex: 1;
+	text-align: left;
+	padding-right: 20px;
+	margin-left: 200px;
+}
+   
+.auteur{
+   	flex: 1;
+   	text-align: right;
+   	margin-right: 200px;
+   }
+   
+  
+
+.button{
+	font-size: 15px;
+	padding: 5px 10px;
+}
+
+
+
+

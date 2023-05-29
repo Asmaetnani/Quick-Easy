@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Blancs de poulet légers au yaourt et citron vert</title>
+		<link rel="stylesheet" type="text/css" href="style_recette.css">
+	</head>
+	<body>
+		
+		<div class="navbar">
+		   <img src="/home/cytech/Desktop/CyTech_ing1/Semestre 2/Dev Web/Projet_Recettes/logo.jpeg" alt="Logo" class="logo"> <!-- Remplacez "logo.png" par le chemin de votre propre logo -->
+		   <nav>
+		     <ul>
+					<li><a href="../index.html">Accueil</a></li>
+					<li><a href="../description.html">À propos</a></li>
+					<li><a href="../#" id="contactLink">Contact</a></li>
+		     </ul>
+		   </nav>
+		 </div>
+		 <br><br><br><br>
+		 
+		 
+		<div class="div1">
+		<h1>Blancs de poulet légers au yaourt et citron vert</h1>
+		
+		<br><br>
+		<div class="image-row">
+		<div style="font-weight: bold; color:hotpink;">
+			<img src="img/quantite.png">
+			<br>Quantité<p>6 personnes</p>
+		</div>
+		<div style="font-weight: bold; color:hotpink;">
+			<img src="img/preparation.png">
+			<br>Préparation<p>10 minutes</p>
+		</div>
+		<div style="font-weight: bold; color:hotpink;">
+			<img src="img/temps.png">
+			<br>Cuisson<p>25 minutes</p>
+		</div>
+		<div style="font-weight: bold; color:hotpink;">
+		    <img src="img/note.png">
+		    <br>Note
+		    <p id="moyenne-etoiles"></p>
+		</div>
+
+		</div>
+		<br>
+		
+		</div>
+		<br><br>
+		
+		
+		
+		<div class="div2">
+		<div class="texte">
+		<h2><u>CE QU'IL VOUS FAUT:</u></h2>
+		<h3>Ingrédients:</h3>
+		<ul>
+			<li>6 escalopes de poulet</li>
+			<li>Des citrons vert</li>
+			<li>2 yaourt nature (type Activia)</li>
+		</ul>
+		
+		<h3>Condiments:</h3>
+		<ul>
+			<li>sel</li>
+			<li>poivre</li>
+		</ul>
+		
+		<h3>Ustensiles:</h3>
+		<ul>
+			<li>1 four</li>
+			<li>1 planche de coupe</li>
+			<li>6 assiettes</li>
+		</ul>
+		</div>
+		<div class="platImg">
+		<img src="img/pouletyaourt.webp" alt="Blanc de poulet"> 
+		</div>
+		</div>
+		
+		
+		
+		<br><br><br><br>
+		<div class="div3">
+		<h2><u>CUISSON:</u></h2>
+		
+			<p><span class="premierLettre">U</span>ne heure avant la cuisson, coupez les blancs de poulet en dés d’environ 3 cm de côté. Mettez-les dans un saladier. Ajoutez les 2 yaourts, le zeste du citron vert, salez et poivrez. Mélangez et réservez au réfrigérateur pendant environ 1 heure.</p>
+			<p><span class="premierLettre">U</span>ne heure après, préchauffez votre four à 150°C. Étalez les dés de poulet sur une plaque de cuisson anti adhésive ou dans un plat mais il ne faut pas que le poulet soit sur plusieurs épaisseurs. Enfournez pour 15 minutes. Vérifiez la cuisson du poulet en coupant un dé en deux. Suivant la taille, il peut mettre 5 minutes de plus à cuire.</p>
+			<p><span class="premierLettre">A</span> la sortie du four, pressez le jus du citron vert sur le poulet, salez et poivrez à nouveau.</p>
+		
+		</div>
+		
+		<br><br>
+		
+		<div class="div4">
+		
+		
+		<div class="commentaire">
+			
+			<h2><u>AJOUTER UN COMMENTAIRE:</u></h2>
+					
+			<form id="commentForm">
+			    <div class="evaluation">
+			        <div class="rating">
+			            <h3>Evaluez cette recette:</h3>
+			        </div>
+			        <div id="star-rating">
+			            <span class="star" data-rating="1">&#9733;</span>
+			            <span class="star" data-rating="2">&#9733;</span>
+			            <span class="star" data-rating="3">&#9733;</span>
+			            <span class="star" data-rating="4">&#9733;</span>
+			            <span class="star" data-rating="5">&#9733;</span>
+			        </div>
+			    </div>
+			    <p id="selected-rating-error" class="error-message"></p>
+			
+			    <div class="comment-send">
+			        <span class="comment-avatar">
+			            <img src="img/user1.png" alt="avatar">
+			        </span>
+			        <textarea class="comment-input" name="comment" form="commentForm" cols="80" rows="5" placeholder="Laissez votre commentaire" required></textarea>
+			        <p id="comment-error" class="error-message"></p>
+			        <input class="send-button" type="submit" value="Envoyer">
+			    </div>
+			</form>
+			
+			
+			
+		<h2><u>COMMENTAIRES:</u></h2>
+			<br>
+			<select id="tri-select" onchange="afficherCommentaires(this.value)">
+			  <option value="plus-recent">Les plus récents</option>
+			  <option value="favorable">Les plus favorables</option>
+			  <option value="defavorable">Les moins favorables</option>
+			</select>
+			
+			<br><br><br>
+			
+			
+			<div id="section-commentaire">
+				<ul id="liste-commentaires"></ul>
+			</div>
+			
+			
+			<div class="comment-list" id="commentList">
+			    
+			    
+				<div class="comment comment-bottom">
+				    <div class="comment-avatar">
+				        <img src="img/user2.png" alt="avatar">
+				    </div>
+				    <div class="comment-content">
+				        <p class="comment-content-name">Flavie</p>
+						<div id="real-rating">
+						    <span class="selectedstar" data-rating="1">&#9733;</span>
+						    <span class="selectedstar" data-rating="2">&#9733;</span>
+						    <span class="selectedstar" data-rating="3">&#9733;</span>
+						    <span class="star" data-rating="4">&#9733;</span>
+						    <span class="star" data-rating="5">&#9733;</span>
+						</div>
+				        <p class="comment-content-article">Temps de cuisine plus que prévu.</p>
+				        <p class="comment-content-footer">
+				            <span class="comment-content-footer-id">#1</span>
+				            <span class="comment-content-footer-device">iPhone</span>
+				            <span class="comment-content-footer-timestamp">25/03/2023 à 13:10</span>
+				        </p>
+				    </div>
+				    <div class="cls"></div>
+				</div>
+				
+				<div class="comment">
+					<span class="comment-avatar">
+						<img src="img/user12.png" alt="avatar">
+				    </span>
+				    <div class="comment-content">
+				        <p class="comment-content-name">Rudy</p>
+						<div id="real-rating">
+						    <span class="selectedstar" data-rating="1">&#9733;</span>
+						    <span class="star" data-rating="2">&#9733;</span>
+						    <span class="star" data-rating="3">&#9733;</span>
+						    <span class="star" data-rating="4">&#9733;</span>
+						    <span class="star" data-rating="5">&#9733;</span>
+						</div>
+				        <p class="comment-content-article">Beurk</p>
+						<p class="comment-content-footer">
+							<span class="comment-content-footer-id">#2</span>
+				            <span class="comment-content-footer-device">iPhone</span>
+				            <span class="comment-content-footer-timestamp">09/04/2023 à 08:27</span>
+				        </p>
+				    </div>
+				    <div class="cls"></div>
+				</div>
+				
+				<div class="comment">
+					<span class="comment-avatar">
+						<img src="img/user5.png" alt="avatar">
+				    </span>
+				    <div class="comment-content">
+				        <p class="comment-content-name">Clara</p>
+						<div id="real-rating">
+						    <span class="selectedstar" data-rating="1">&#9733;</span>
+						    <span class="selectedstar" data-rating="2">&#9733;</span>
+						    <span class="selectedstar" data-rating="3">&#9733;</span>
+						    <span class="selectedstar" data-rating="4">&#9733;</span>
+						    <span class="star" data-rating="5">&#9733;</span>
+						</div>
+				        <p class="comment-content-article">Assez facile à cuisiner.</p>
+						<p class="comment-content-footer">
+							<span class="comment-content-footer-id">#3</span>
+				            <span class="comment-content-footer-device">Huawei</span>
+				            <span class="comment-content-footer-timestamp">18/05/2023 à 23:23</span>
+				        </p>
+				    </div>
+				    <div class="cls"></div>
+				</div>
+				
+				<div class="comment">
+					<span class="comment-avatar">
+						<img src="img/user.png" alt="avatar">
+				    </span>
+				    <div class="comment-content">
+				        <p class="comment-content-name">Hugo</p>
+						<div id="real-rating">
+						    <span class="selectedstar" data-rating="1">&#9733;</span>
+						    <span class="selectedstar" data-rating="2">&#9733;</span>
+						    <span class="selectedstar" data-rating="3">&#9733;</span>
+						    <span class="selectedstar" data-rating="4">&#9733;</span>
+						    <span class="selectedstar" data-rating="5">&#9733;</span>
+						</div>
+				        <p class="comment-content-article">Très bonne recette! Je vais la recommander à tout le monde!</p>
+						<p class="comment-content-footer">
+							<span class="comment-content-footer-id">#4</span>
+				            <span class="comment-content-footer-device">Huawei</span>
+				            <span class="comment-content-footer-timestamp">06/05/2023 à 14:05</span>
+				        </p>
+				    </div>
+				    <div class="cls"></div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		
+		<div class="auteur">
+		<h2><u>NOTE DE L'AUTEUR:</u></h2>
+		<p class="note-auteur">Accompagnez de légumes puis, servez bien chaud.</p>
+		</div>
+			
+			
+		</div>
+			
+			
+			<script>
+				//calculer la moyenne
+				function calculerMoyenneEtoiles() {
+				  var comments = document.getElementsByClassName('comment');
+				  var totalStars = 0;
+				  var totalComments = 0;
+				
+				  for (var i = 0; i < comments.length; i++) {
+				    var stars = comments[i].querySelectorAll('.selectedstar');
+				    totalStars += stars.length;
+				    totalComments++;
+				  }
+				
+				  var moyenne = totalStars / totalComments;
+				  return moyenne;
+				}
+				
+				// Supposons que la balise <p> ait un ID spécifique pour être sélectionnée facilement
+				var moyenneEtoilesElement = document.getElementById('moyenne-etoiles');
+				
+				// Obtenez la moyenne des étoiles calculée précédemment
+				var moyenneEtoiles = calculerMoyenneEtoiles();
+				
+				// Mettre à jour le contenu de la balise <p> avec la moyenne des étoiles
+				moyenneEtoilesElement.textContent = moyenneEtoiles.toFixed(2) + " / 5";
+			</script>
+		
+		
+		
+			<script>
+				// Evaluation avec les étoiles
+				const stars = document.querySelectorAll('.star');
+				const selectedRatingElement = document.getElementById('selected-rating');
+				
+				stars.forEach(function(star, index) {
+				  star.addEventListener('click', function() {
+				    stars.forEach(function(s, i) {
+				      if (i <= index) {
+				        s.classList.add('selected');
+				      } else {
+				        s.classList.remove('selected');
+				      }
+				    });
+				  });
+				});
+				  
+				document.getElementById("commentForm").addEventListener("submit", function(event) {
+				  event.preventDefault(); // Empêcher la soumission du formulaire
+				
+				  // Récupérer la note sélectionnée
+				  const selectedRating = document.querySelector("#star-rating .star.selected");
+				  const comment = document.querySelector(".comment-input").value;
+				  const commentList = document.getElementById("commentList");
+				  const ratingErrorElement = document.getElementById("selected-rating-error");
+				  const commentErrorElement = document.getElementById("comment-error");
+				
+				  // Vérifier si la note et le commentaire sont valides
+				  if (!selectedRating) {
+				    ratingErrorElement.textContent = "Veuillez évaluer cette recette.";
+				  } else {
+				    ratingErrorElement.textContent = ""; // Effacer le message d'erreur précédent
+				  }
+				  if (selectedRating && comment) {
+				    // Récupérer le nombre de commentaires existants
+				    const existingComments = commentList.getElementsByClassName("comment").length;
+				
+				    // Créer un nouvel élément de commentaire
+				    const newComment = document.createElement("li");
+				    newComment.classList.add("comment");
+					
+				    // Avatar par défaut
+				    const avatar = document.createElement("span");
+				    avatar.classList.add("comment-avatar");
+				    const avatarImg = document.createElement("img");
+				    avatarImg.src = "img/user1.png";
+				    avatarImg.alt = "avatar";
+				    avatar.appendChild(avatarImg);
+				    newComment.appendChild(avatar);
+				
+				    // Contenu du commentaire
+				    const commentContent = document.createElement("div");
+				    commentContent.classList.add("comment-content");
+				
+				    // Nom du commentaire
+				    const commentName = document.createElement("p");
+				    commentName.classList.add("comment-content-name");
+				    commentName.textContent = "unknown";
+				    commentContent.appendChild(commentName);
+				
+				    // Évaluation du commentaire
+				    const rating = document.createElement("div");
+				    rating.classList.add("rating"); // Ajouter la classe "rating"
+				    const selectedRatingCount = selectedRating.getAttribute("data-rating");
+				    for (let i = 1; i <= 5; i++) {
+				      const star = document.createElement("span");
+				      star.classList.add(i <= selectedRatingCount ? "selectedstar" : "star");
+				      star.setAttribute("data-rating", i);
+				      star.innerHTML = "&#9733;";
+				      if (i <= selectedRatingCount) {
+				        star.style.color = "gold"; // Appliquer la couleur "gold" aux étoiles sélectionnées
+				      }
+				      rating.appendChild(star);
+				    }
+				    commentContent.appendChild(rating);
+2
+				
+				
+
+				
+				    // Contenu du commentaire
+				    const commentArticle = document.createElement("p");
+				    commentArticle.classList.add("comment-content-article");
+				    commentArticle.textContent = comment;
+				    commentContent.appendChild(commentArticle);
+				
+				    // Pied de page du commentaire
+				    const commentFooter = document.createElement("p");
+				    commentFooter.classList.add("comment-content-footer");
+				    const commentId = document.createElement("span");
+				    commentId.classList.add("comment-content-footer-id");
+				    commentId.textContent = "#" + (existingComments + 1); // Assigner la valeur de comment-content-footer-id
+				    commentFooter.appendChild(commentId);
+				    const commentDevice = document.createElement("span");
+				    commentDevice.classList.add("comment-content-footer-device");
+				    commentDevice.textContent = Math.random() < 0.5 ? "iPhone" : "Huawei";
+				    commentFooter.appendChild(commentDevice);
+				    const commentTimestamp = document.createElement("span");
+				    commentTimestamp.classList.add("comment-content-footer-timestamp");
+				    commentTimestamp.textContent = new Date().toLocaleString();
+				    commentFooter.appendChild(commentTimestamp);
+				    commentContent.appendChild(commentFooter);
+				
+				    newComment.appendChild(commentContent);
+				    commentList.appendChild(newComment);
+				
+					
+					// Réinitialiser les étoiles
+					    stars.forEach(function(star) {
+					      star.classList.remove("selected");
+					    });
+				    // Réinitialiser le formulaire
+				    document.getElementById("commentForm").reset();
+				  }
+				});
+				
+			</script>
+			
+			
+		
+			<script>
+				//trier les commentaires
+				function afficherCommentaires(tri) {
+				  var commentList = document.getElementById('commentList');
+				  var comments = commentList.getElementsByClassName('comment');
+				
+				  // Convertir la collection en tableau pour faciliter le tri
+				  var commentsArray = Array.from(comments);
+				
+				  // Trier les commentaires en fonction du critère de tri
+				  commentsArray.sort(function(a, b) {
+				    var timestampA = parseTimestamp(a.querySelector('.comment-content-footer-timestamp').textContent);
+				    var timestampB = parseTimestamp(b.querySelector('.comment-content-footer-timestamp').textContent);
+				
+				    var ratingA = countGoldStars(a.querySelectorAll('.selectedstar'));
+				    var ratingB = countGoldStars(b.querySelectorAll('.selectedstar'));
+				
+				    if (tri === 'plus-recent') {
+				      return timestampA - timestampB; // Tri par date décroissante (les plus récents d'abord)
+				    } else if (tri === 'defavorable') {
+				      return ratingB - ratingA; // Tri par nombre d'étoiles gold décroissant (les plus favorables d'abord)
+				    } else if (tri === 'favorable') {
+				      return ratingA - ratingB; // Tri par nombre d'étoiles gold croissant (les moins favorables d'abord)
+				    }
+				  });
+				
+				  // Réorganiser les commentaires dans l'ordre trié
+				  for (var i = 0; i < commentsArray.length; i++) {
+				    commentList.appendChild(commentsArray[i]);
+				  }
+				}
+				
+				function parseTimestamp(timestamp) {
+				  var parts = timestamp.split(' ');
+				  var date = parts[0].split('/');
+				  var time = parts[1].split(':');
+				  return new Date(date[2], date[1] - 1, date[0], time[0], time[1]).getTime();
+				}
+				
+				function countGoldStars(stars) {
+				  var count = 0;
+				  for (var i = 0; i < stars.length; i++) {
+				    if (stars[i].classList.contains('selectedstar')) {
+				      count++;
+				    }
+				  }
+				  return count;
+				}
+				
+				// Appel initial pour afficher les commentaires triés par date (plus récents d'abord)
+				afficherCommentaires('plus-recent');
+
+			</script>
+			
+			
+				
+			
+	</body>
+</html>
